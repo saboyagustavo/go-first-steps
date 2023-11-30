@@ -1,16 +1,15 @@
 package main
 
+import "fmt"
+
 func sum(
 	x int,
 	y int,
-) (int, bool) {
-	if x > 10 {
-		return x + y, true
-	}
-	return x + y, false
+) int {
+	return x + y
 }
 
 func main() {
-	result, status := sum(2, 2)
-	println(result, status)
+	result := sum(2, 2)
+	fmt.Printf("The sum results in %d\n", result)
 }
