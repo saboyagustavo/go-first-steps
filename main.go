@@ -16,9 +16,11 @@ func worker(workerID int, data chan int) {
 func main() {
 	ch := make(chan int)
 	// T2
-	go worker(1, ch)
+	for i := 0; i < 10000; i++ {
+		go worker(i, ch)
+	}
 
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 100000; i++ {
 		ch <- i
 	}
 }
