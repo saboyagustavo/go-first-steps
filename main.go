@@ -23,4 +23,6 @@ func main() {
 	for i := 0; i < 100000; i++ {
 		ch <- i
 	}
+
+	close(ch)
 }
